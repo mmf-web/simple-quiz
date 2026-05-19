@@ -1,16 +1,65 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>JavaScript — квиз</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <h1>Квиз!</h1>
+  <body
+    class="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 font-sans text-slate-100 antialiased"
+  >
+    <div class="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
+      <div
+        class="absolute -left-32 top-0 h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl"
+      ></div>
+      <div
+        class="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-violet-500/15 blur-3xl"
+      ></div>
+    </div>
 
-    <form id="quiz">
-      <button type="submit">Проверить</button>
-    </form>
+    <div class="relative mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-16">
+      <header class="mb-10 text-center">
+        <p
+          class="mb-3 inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-4 py-1 text-sm font-medium text-indigo-300"
+        >
+          <span class="h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+          MMF · JavaScript
+        </p>
+        <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">
+          Квиз по массивам и объектам
+        </h1>
+        <p class="mt-3 text-slate-400">
+          10 вопросов · одиночный и множественный выбор
+        </p>
+      </header>
+
+      <form id="quiz" class="space-y-6">
+        <button
+          type="submit"
+          class="w-full rounded-xl bg-indigo-500 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-slate-950 active:scale-[0.99]"
+        >
+          Проверить ответы
+        </button>
+      </form>
+    </div>
 
     <script src="questions.js"></script>
     <script src="main.js"></script>
