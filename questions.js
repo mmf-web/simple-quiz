@@ -1,4 +1,4 @@
-const questions = [
+const allQuestions = [
   {
     question: 'Что возвращает `[1, 2, 3].slice(1, 2)`?',
     options: ['[2]', '[2, 3]', '[1, 2]', '[1]'],
@@ -57,6 +57,66 @@ const questions = [
     question: 'После `const { a, b: renamed } = { a: 1, b: 2 }` каковы значения `a` и `renamed`?',
     options: ['a = 1, renamed = 2', 'a = 2, renamed = 1', 'a = undefined, renamed = 2', 'выбрасывает SyntaxError'],
     answers: ['a = 1, renamed = 2'],
+    type: 'single',
+  },
+  {
+    question: 'Что возвращает `[1, 2, 3, 4].filter((x) => x % 2 === 0)`?',
+    options: ['[2, 4]', '[1, 3]', '2', 'true'],
+    answers: ['[2, 4]'],
+    type: 'single',
+  },
+  {
+    question: 'Чему равно `[1, 2, 3].reduce((sum, x) => sum + x, 0)`?',
+    options: ['6', '[1, 2, 3]', '0', 'undefined'],
+    answers: ['6'],
+    type: 'single',
+  },
+  {
+    question: 'Какие из следующих выражений возвращают `true`?',
+    options: ['Array.isArray([])', 'typeof null === "object"', '[1, 2].includes(2)', 'typeof [] === "array"'],
+    answers: ['Array.isArray([])', 'typeof null === "object"', '[1, 2].includes(2)'],
+    type: 'multiple',
+  },
+  {
+    question: 'Что возвращает `Object.entries({ x: 10, y: 20 })`?',
+    options: ['[["x", 10], ["y", 20]]', '["x", "y"]', '{ x: 10, y: 20 }', '[10, 20]'],
+    answers: ['[["x", 10], ["y", 20]]'],
+    type: 'single',
+  },
+  {
+    question: 'Что возвращает `[..."abc"]`?',
+    options: ['["a", "b", "c"]', '"abc"', '3', 'выбрасывает TypeError'],
+    answers: ['["a", "b", "c"]'],
+    type: 'single',
+  },
+  {
+    question: 'Какой результат у `const obj = { a: 1 }; const copy = obj; copy.a = 2; obj.a`?',
+    options: ['1', '2', 'undefined', 'выбрасывает ошибку'],
+    answers: ['2'],
+    type: 'single',
+  },
+  {
+    question: 'Что возвращает `[3, 1, 4].sort()` без аргументов (элементы — числа)?',
+    options: ['[1, 3, 4]', '[3, 1, 4]', '[1, 4, 3]', 'зависит от движка, порядок не гарантирован как у чисел'],
+    answers: ['[1, 4, 3]'],
+    type: 'single',
+  },
+  {
+    question: 'Какие методы массива возвращают новый массив, не изменяя исходный?',
+    options: ['slice()', 'concat()', 'splice()', 'toSorted()'],
+    answers: ['slice()', 'concat()', 'toSorted()'],
+    type: 'multiple',
+  },
+  {
+    question: 'Чему равно `({ ...{ a: 1 }, b: 2 }).b`?',
+    options: ['2', '1', 'undefined', 'выбрасывает ошибку'],
+    answers: ['2'],
+    type: 'single',
+  },
+  {
+    question: 'Что выведет `console.log(Object.getPrototypeOf({})) === Object.prototype)`?',
+    options: ['true', 'false', 'null', 'undefined'],
+    answers: ['true'],
     type: 'single',
   },
 ]
